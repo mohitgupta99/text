@@ -5,11 +5,12 @@ const router = express.Router();
 const{getUserById,getUser} = require("../controllers/user");
 const{isSignedIn,isAuthenticated,isAdmin} = require("../controllers/auth");
 
-//assignment
+//importing all users
 const{getAllUsers} = require("../controllers/user");
 
 router.param("userId", getUserById);
 
+//checking
 router.get("/user/:userId", isSignedIn,isAuthenticated,getUser);
 
 //assignment
